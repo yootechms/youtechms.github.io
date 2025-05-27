@@ -10,7 +10,7 @@
 
       if (/android/i.test(userAgent)) {
         // Android
-        appScheme = "testapp://xyz";
+        appScheme = "ms-officemobile://xyz";
         storeUrl = "https://play.google.com/store/apps/details?id=com.example.testapplication";
         window.location = appScheme;
         setTimeout(function () {
@@ -18,7 +18,7 @@
         }, 1500);
       } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
         // iOS
-        appScheme = "testapp://path";
+        appScheme = "ms-officemobile://xyz";
         storeUrl = "https://apps.apple.com/app/idXXXXXXXXX"; // Replace idXXXXXXXXX with your App Store ID
         window.location = appScheme;
         setTimeout(function () {
