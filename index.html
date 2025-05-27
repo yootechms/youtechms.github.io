@@ -10,7 +10,7 @@
 
       if (/android/i.test(userAgent)) {
         // Android
-        appScheme = "testapp://path";
+        appScheme = "testapp://xyz";
         storeUrl = "https://play.google.com/store/apps/details?id=com.example.testapplication";
         window.location = appScheme;
         setTimeout(function () {
@@ -30,7 +30,7 @@
     }
   </script>
 </head>
-<body>
-  <button onclick="openApp()">Open App</button>
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+  <button onclick="openApp()" style="font-size: 2rem; padding: 1rem 2rem; border-radius: 8px;">Open App</button>
 </body>
 </html> 
