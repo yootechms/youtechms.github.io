@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Open App</title>
+  <script>
+    function openApp() {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      var appScheme, storeUrl;
+
+      if (/android/i.test(userAgent)) {
+        // Android
+        appScheme = "testapp://path";
+        storeUrl = "https://play.google.com/store/apps/details?id=com.example.testapplication";
+        window.location = appScheme;
+        setTimeout(function () {
+          window.location = storeUrl;
+        }, 1500);
+      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        // iOS
+        appScheme = "testapp://path";
+        storeUrl = "https://apps.apple.com/app/idXXXXXXXXX"; // Replace idXXXXXXXXX with your App Store ID
+        window.location = appScheme;
+        setTimeout(function () {
+          window.location = storeUrl;
+        }, 1500);
+      } else {
+        alert("Please open this page on your mobile device.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <button onclick="openApp()">Open App</button>
+</body>
+</html> 
