@@ -9,6 +9,6 @@
       ]
     },
     "host": "yootechms.github.io",
-    "path": "/youtechms.github.io/chat/*"
+    "path": "/youtechms.github.io/chat/.*"
   }
 ] 
