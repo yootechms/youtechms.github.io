@@ -3,35 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Hello World</title>
-  <script>
-    window.onload = function() {
-      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-      var universalLink = "https://yootechms.github.io/youtechms.github.io/chat/?titleId=P_552e6eda-fc18-7fb9-0ef6-1bf2de3393e4"; // Your universal/app link
-      var androidStoreUrl = "https://play.google.com/store/apps/details?id=com.microsoft.office.officehubrow"; // Your Android store URL
-      var iosStoreUrl = "https://apps.apple.com/app/idYOUR_APP_ID"; // Your iOS store URL
-
-      var fallbackUrl = '';
-      if (/android/i.test(userAgent)) {
-        fallbackUrl = androidStoreUrl;
-      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        fallbackUrl = iosStoreUrl;
-      } else {
-         // For desktop or other devices, maybe redirect to the universal link again
-         // or show a message. For now, we'll just try the universal link.
-         console.log("Not a recognized mobile device.");
-         window.location = universalLink; // Still try the universal link
-         return;
-      }
-
-      // Attempt to open the universal link
-      window.location = universalLink;
-
-      // Set a timeout to redirect to the store if the app doesn't open
-      setTimeout(function() {
-        window.location = fallbackUrl;
-      }, 1500); // Adjust delay as needed
-    };
-  </script>
 </head>
 <body>
   <h1>Hello World</h1>
