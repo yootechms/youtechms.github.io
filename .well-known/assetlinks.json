@@ -2,14 +2,13 @@
   {
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
-      "namespace": "ms-officemobile",
-      "package_name": "com.microsoft.office.officehubrow",
+      "namespace": "android_app",
+      "package_name": "com.example.testapplication",
       "sha256_cert_fingerprints": [
         "10:AE:B3:E5:31:71:E3:51:79:0D:94:8C:FE:BA:33:14:51:3E:8E:7C:DE:CF:39:D9:9D:AB:5F:AD:8F:94:6C:11"
       ]
     },
     "host": "www.example.com",
-    "path": "/chat"
-
+    "path": "/chat*"
   }
 ] 
