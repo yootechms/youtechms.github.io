@@ -3,8 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <title>Hello World</title>
+  <script>
+    window.onload = function() {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      var universalLink = "https://yootechms.github.io/youtechms.github.io/chat/?titleId=P_552e6eda-fc18-7fb9-0ef6-1bf2de3393e4"; // Your universal/app link
+      var androidStoreUrl = "https://play.google.com/store/apps/details?id=com.microsoft.office.officehubrow"; // Your Android store URL
+      var iosStoreUrl = "https://apps.apple.com/app/idYOUR_APP_ID"; // Your iOS store URL
+
+      var fallbackUrl = '';
+      if (/android/i.test(userAgent)) {
+        fallbackUrl = androidStoreUrl;
+      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        fallbackUrl = iosStoreUrl;
+      } else {
+         // For desktop or other devices, maybe redirect to the universal link again
+         // or show a message. For now, we'll just try the universal link.
+         console.log("Not a recognized mobile device.");
+         // On desktop, we might not want to do anything or show a message.
+         // Let's just stop here for non-mobile.
+         return;
+      }
+
+      // Attempt to open the universal link
+      // Using window.location here attempts to trigger the app link.
+      window.location = universalLink;
+
+      // If the app doesn't open, the browser will stay on this page.
+      // The timeout will then redirect to the fallback URL.
+      setTimeout(function() {
+        // Check if the user is still on this page before redirecting
+        if (document.visibilityState === 'visible') {
+           window.location = fallbackUrl;
+        }
+      }, 1500); // Adjust delay as needed
+    };
+  </script>
 </head>
 <body>
   <h1>Hello World</h1>
+  <p>Attempting to open the app...</p>
+  <p>If the app doesn't open, you will be redirected to the store.</p>
 </body>
 </html> 
