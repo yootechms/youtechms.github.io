@@ -6,26 +6,22 @@
   <script>
     function openApp() {
       var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-      var appScheme, storeUrl;
+      var universalLink = "https://yourdomain.com/openapp"; // <-- Replace with your universal/app link
+      var androidStoreUrl = "https://play.google.com/store/apps/details?id=YOUR_PACKAGE_NAME"; // <-- Replace with your app's package name
+      var iosStoreUrl = "https://apps.apple.com/app/idYOUR_APP_ID"; // <-- Replace with your App Store ID
 
       if (/android/i.test(userAgent)) {
-        // Android
-        appScheme = "ms-officemobile://xyz";
-        storeUrl = "https://play.google.com/store/apps/details?id=com.example.testapplication";
-        window.location = appScheme;
+        window.location = universalLink;
         setTimeout(function () {
-          window.location = storeUrl;
+          window.location = androidStoreUrl;
         }, 1500);
       } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        // iOS
-        appScheme = "ms-officemobile://xyz";
-        storeUrl = "https://apps.apple.com/app/idXXXXXXXXX"; // Replace idXXXXXXXXX with your App Store ID
-        window.location = appScheme;
+        window.location = universalLink;
         setTimeout(function () {
-          window.location = storeUrl;
+          window.location = iosStoreUrl;
         }, 1500);
       } else {
-        alert("Please open this page on your mobile device.");
+        window.location = universalLink;
       }
     }
   </script>
